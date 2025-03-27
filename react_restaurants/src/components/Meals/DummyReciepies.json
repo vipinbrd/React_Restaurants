@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Spicy Garlic Chicken",
+      "title": "Fiery, Juicy, Flavorful",
+      "price": 12.99
+    },
+    {
+      "name": "Creamy Pesto Pasta",
+      "title": "Rich, Cheesy, Basil",
+      "price": 10.49
+    },
+    {
+      "name": "Grilled Salmon Delight",
+      "title": "Fresh, Smoky, Tender",
+      "price": 15.99
+    },
+    {
+      "name": "Classic Margherita Pizza",
+      "title": "Cheesy, Crispy, Italian",
+      "price": 9.99
+    },
+    {
+      "name": "Tangy BBQ Ribs",
+      "title": "Smoky, Tender, Saucy",
+      "price": 18.99
+    },
+    {
+      "name": "Cheesy Loaded Nachos",
+      "title": "Crunchy, Spicy, Cheesy",
+      "price": 8.99
+    },
+    {
+      "name": "Butter Garlic Shrimp",
+      "title": "Garlic, Buttery, Juicy",
+      "price": 14.49
+    },
+    {
+      "name": "Crispy Chicken Tenders",
+      "title": "Golden, Crunchy, Juicy",
+      "price": 11.29
+    },
+    {
+      "name": "Savory Mushroom Risotto",
+      "title": "Creamy, Earthy, Rich",
+      "price": 13.79
+    },
+    {
+      "name": "Sweet Chili Tofu Bowl",
+      "title": "Spicy, Sweet, Protein-Packed",
+      "price": 10.99
+    }
+  ]
+  
