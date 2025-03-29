@@ -1,3 +1,4 @@
+import { Form } from "../UI/Form";
 import data from "./DummyReciepies.json";
 
 export function Meals() {
@@ -12,9 +13,11 @@ export function Meals() {
             <h2 className="text-xl font-bold text-gray-800">{ele.name}</h2>
             <p className="text-gray-600">{ele.title}</p>
             <p className="text-green-600 font-semibold">${ele.price.toFixed(2)}</p>
+            <Form/>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+   
