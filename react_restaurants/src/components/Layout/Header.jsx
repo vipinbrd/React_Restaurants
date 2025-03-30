@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { ShoppingCart } from "lucide-react"; 
 import banner from "../../assets/React_Header.png"
+import {Cart} from "../Cart/Cart"
 
 export const Header = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [isCartOpen,setIsCartOpen]=useState(false);
+  function onClose(){
+    setIsCartOpen(false)
+  }
+ 
 
   return (
     <>
@@ -12,7 +18,7 @@ export const Header = () => {
       <h1 className="text-2xl font-semibold">ReactMeals</h1>
 
     
-      <button className="relative flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+      <button onClick={()=>setIsCartOpen(true)}className="relative flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">
         <ShoppingCart size={24} />
         <span className="text-lg font-medium">Cart</span>
         
@@ -24,6 +30,10 @@ export const Header = () => {
      <div>
         <img src={banner}></img>
      </div>
+     {
+      isCartOpen&&<Cart onClose={onClose}/>
+     }
+     
     </>
   );
 };
