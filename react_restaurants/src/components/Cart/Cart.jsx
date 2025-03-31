@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { CartContext } from "../Store/CartData";
 
 export function Cart({ onClose }) {
     const [showModal, setShowModal] = useState(false);
+    const{cartData}=useContext(CartContext)
 
     useEffect(() => {
         setTimeout(() => {
@@ -26,17 +28,24 @@ export function Cart({ onClose }) {
                     showModal ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
             >
-                <p className="text-lg font-semibold">Dish Name</p>
+                
+                {cartData.map((ele)=>{
+                    return(
+                        <>
+                        <p className="text-lg font-semibold">Dish Name</p>
                 <div className="mt-2">
                     <p className="text-gray-700">Total Amount</p>
                     <p className="text-xl font-bold">₹400</p>
                 </div>
                 <div className="mt-4 flex gap-2">
-                    <button onClick={onClose} className="px-4 py-2 bg-red-500 text-white rounded">
+                    <button onClick={()=>onClose()} className="px-4 py-2 bg-red-500 text-white rounded">
                         Close
                     </button>
                     <button className="px-4 py-2 bg-blue-600 text-white rounded">Order</button>
                 </div>
+                </>
+                    )
+                })}
             </div>
         </>,
         document.getElementById("backdrop") // ✅ Use `getElementById`

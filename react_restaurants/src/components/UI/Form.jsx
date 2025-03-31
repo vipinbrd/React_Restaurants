@@ -1,6 +1,21 @@
-export function Form() {
+import { useContext, useState } from "react";
+import { CartContext } from "../Store/CartData";
+
+export function Form(props) {
+
+  const{cartData,insertItem,deleteItem}=useContext(CartContext);
+
+  const [quantity,setQuantity]=useState(1);
+  function submitHandler(event){
+    event.preventDefault()
+     const data={...props.ele,qty:quantity};
+     insertItem(data);
+ 
+  }
+  console.log(cartData)
     return (
-      <>
+      <> 
+      <form onSubmit={(event)=>submitHandler(event)}>
         <label htmlFor="qty" className="text-gray-700 font-medium mr-1">
           Quantity
         </label>
@@ -10,14 +25,17 @@ export function Form() {
           type="number"
           min="1"
           max="5"
-          defaultValue="1"
+          defaultValue={quantity}
+          onChange={(event)=>setQuantity(event.target.value)}
         />
         <button
           className="bg-red-700 ml-1 hover:bg-red-800 transition-all px-4 py-2 rounded-md text-white font-semibold shadow-md"
           type="submit"
         >
           + Add
+
         </button>
+        </form>
       </>
     );
   }
