@@ -12,7 +12,9 @@ export function Form(props) {
      insertItem(data);
  
   }
-  console.log(cartData)
+function onAddHandler(){
+  alert("Your Item is Added")
+}
     return (
       <> 
       <form onSubmit={(event)=>submitHandler(event)}>
@@ -28,7 +30,7 @@ export function Form(props) {
           defaultValue={quantity}
           onChange={(event)=>setQuantity(event.target.value)}
         />
-        <button
+        <button onClick={()=>onAddHandler()}
           className="bg-red-700 ml-1 hover:bg-red-800 transition-all px-4 py-2 rounded-md text-white font-semibold shadow-md"
           type="submit"
         >

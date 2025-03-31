@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCart } from "lucide-react"; 
 import banner from "../../assets/React_Header.png"
 import {Cart} from "../Cart/Cart"
+import { CartContext } from "../Store/CartData";
 
 export const Header = () => {
-  const [cartQuantity, setCartQuantity] = useState(0);
+  const {cartData}=useContext(CartContext)
   const [isCartOpen,setIsCartOpen]=useState(false);
   function onClose(){
     setIsCartOpen(false)
@@ -23,7 +24,7 @@ export const Header = () => {
         <span className="text-lg font-medium">Cart</span>
         
         <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-          {cartQuantity}
+          {cartData.length}
         </span>
       </button>
     </header>
