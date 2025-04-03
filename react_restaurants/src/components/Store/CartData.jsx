@@ -5,7 +5,7 @@ export const CartContext=createContext({});
 export function  CartProvider({children}){
    const[cartData,setCartData]=useState([]);
    function insertItem(ele){
-    console.log("shourya Barode")
+   
 
     let find=false
     const newData=cartData.map((cur)=>{
